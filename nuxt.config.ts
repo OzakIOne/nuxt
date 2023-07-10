@@ -2,31 +2,33 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
-    '@invictus.codes/nuxt-vuetify',
-    // '@nuxtjs/tailwindcss',
+    '@vueuse/nuxt',
+    // '@invictus.codes/nuxt-vuetify',
+    '@nuxtjs/supabase',
+    '@nuxtjs/tailwindcss',
     '@nuxtjs/eslint-module',
     [
       '@storyblok/nuxt',
       {
-        accessToken: '<your-access-token>',
-      },
-    ],
-  ],
-  vuetify: {
-    /* vuetify options */
-    vuetifyOptions: {
-      // @TODO: list all vuetify options
-    },
+        accessToken: '<your-access-token>'
+      }
+    ]
+  ]
+  // vuetify: {
+  //   /* vuetify options */
+  //   vuetifyOptions: {
+  //     // @TODO: list all vuetify options
+  //   },
 
-    moduleOptions: {
-      /* nuxt-vuetify module options */
-      treeshaking: true,
-      useIconCDN: false,
+  //   moduleOptions: {
+  //     /* nuxt-vuetify module options */
+  //     treeshaking: true,
+  //     useIconCDN: false,
 
-      /* vite-plugin-vuetify options */
-      styles: true,
-      autoImport: true,
-      importLabComponents: true,
-    },
-  },
-});
+  //     /* vite-plugin-vuetify options */
+  //     styles: true,
+  //     autoImport: true,
+  //     importLabComponents: true,
+  //   },
+  // },
+})
