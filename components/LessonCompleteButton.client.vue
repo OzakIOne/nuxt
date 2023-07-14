@@ -20,10 +20,10 @@
 defineProps({
   modelValue: {
     type: Boolean,
-    default: false
-  }
-})
-defineEmits(['update:modelValue'])
+    default: false,
+  },
+});
+defineEmits(['update:modelValue']);
 </script>
 
 <style scoped>

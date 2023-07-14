@@ -1,9 +1,6 @@
 <template>
   <div v-if="user" class="rounded p-3 flex items-center space-x-3 bg-white">
-    <img
-      class="rounded-full w-12 h-12 border-2 border-blue-400"
-      :src="profile"
-    >
+    <img class="rounded-full w-12 h-12 border-2 border-blue-400" :src="profile">
     <div class="text-right">
       <div class="font-medium">
         {{ name }}
@@ -16,17 +13,17 @@
 </template>
 
 <script setup lang="ts">
-const user = useSupabaseUser()
-const name = computed(() => user.value?.user_metadata.full_name)
-const profile = computed(() => user.value?.user_metadata.avatar_url)
+const user = useSupabaseUser();
+const name = computed(() => user.value?.user_metadata.full_name);
+const profile = computed(() => user.value?.user_metadata.avatar_url);
 
-const { auth } = useSupabaseClient()
+const { auth } = useSupabaseClient();
 const logout = async () => {
-  const { error } = await auth.signOut()
+  const { error } = await auth.signOut();
   if (error) {
-    throw new Error('Error logging out')
+    throw new Error('Error logging out');
   }
 
-  await navigateTo('/login')
-}
+  await navigateTo('/login');
+};
 </script>
